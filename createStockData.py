@@ -42,4 +42,4 @@ for i in range(len(hist)):
 
 
 
-wb.save(stock + 'Data.xlsx')
+wb.save('./Data/' + stock + 'Data.xlsx')
