@@ -15,10 +15,10 @@ stock = "NVDA"
 
 
 # Create a Ticker object for the stock
-nvda = yf.Ticker(stock)
+stockData = yf.Ticker(stock)
 
 # Get the historical market data
-hist = nvda.history(period="5y")
+hist = stockData.history(period="5y")
 
 # Remove timezone from dates
 hist.index = hist.index.tz_localize(None)
@@ -38,8 +38,6 @@ ws['C1'] = "Pct Change"
 hist['Percentage Change'] = hist['Close'].pct_change() * 100
 for i in range(len(hist)):
     ws['C'+ str(i+2)] = hist['Percentage Change'].iloc[i]
-
-
 
 
 wb.save('./Data/' + stock + 'Data.xlsx')
