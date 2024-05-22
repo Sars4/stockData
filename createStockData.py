@@ -1,18 +1,22 @@
 import warnings
 import yfinance as yf
 from openpyxl import Workbook
+import StockCharts
 
 # Ignore FutureWarning
 warnings.simplefilter(action='ignore', category=FutureWarning)
+
+#---------------------------------------------------------------------------------------------------------
+# No longer used with the main file
+# Still works to add stock data in an excel file
+#----------------------------------------------------------------------------------------------------------
 
 # Creating an Excel Sheet
 wb = Workbook()
 ws = wb.active
 
 # Stock name
-stock = "NVDA"
-
-
+stock = ""
 
 # Create a Ticker object for the stock
 stockData = yf.Ticker(stock)
@@ -41,3 +45,4 @@ for i in range(len(hist)):
 
 
 wb.save('./Data/' + stock + 'Data.xlsx')
+print("New stock added: " + stock)
