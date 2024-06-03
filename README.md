@@ -1,3 +1,4 @@
+# Stock Data
 CreateStockData.py is a part of what is implemented in StockData.py
 
 CreateStockData uses a ticker name to retrieve the stock and implement it into an excel file
